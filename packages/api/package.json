@@ -15,7 +15,7 @@
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
-    "migrate": "node-pg-migrate",
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
@@ -24,13 +24,18 @@
   "dependencies": {
     "@nestjs/common": "^7.6.15",
     "@nestjs/core": "^7.6.15",
+    "@nestjs/graphql": "^7.10.3",
     "@nestjs/platform-express": "^7.6.15",
-    "dotenv": "^8.2.0",
-    "node-pg-migrate": "^5.9.0",
+    "@nestjs/typeorm": "^7.1.5",
+    "apollo-server-express": "^2.22.1",
+    "dotenv-flow": "^3.2.0",
+    "graphql": "^15.5.0",
+    "graphql-tools": "^7.0.4",
     "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.6"
+    "rxjs": "^6.6.6",
+    "typeorm": "^0.2.31"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.6.0",
@@ -38,7 +43,7 @@
     "@nestjs/testing": "^7.6.15",
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.22",
-    "@types/node": "^14.14.36",
+    "@types/node": "^14.14.37",
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
@@ -59,6 +64,13 @@
       "js",
       "json",
       "ts"
+    ],
+    "setupFiles": [
+      "./config/env.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/config/",
+      ".*\\.d\\.ts$"
     ],
     "rootDir": "src",
     "testRegex": ".*\\.spec\\.ts$",
