@@ -41,7 +41,7 @@ describe('ActivityService', () => {
     const activitiy: ActivityEntity = new ActivityEntity();
     repositoryMock.save.mockReturnValue(activitiy);
     const createdActivity = service.create({
-      name: '123',
+      text: '123',
       startedAt: new Date(),
       endedAt: new Date(),
     });

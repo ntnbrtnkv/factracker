@@ -10,7 +10,7 @@ export class ActivityEntity {
 
   @Field()
   @Column('varchar', { length: 256 })
-  name: string;
+  text: string;
 
   @Field()
   @Column('timestamptz')

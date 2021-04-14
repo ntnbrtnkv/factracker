@@ -17,12 +17,12 @@ export class ActivityResolver {
 
   @Mutation(() => ActivityEntity)
   async createActivity(
-    @Args('name') name: string,
+    @Args('text') text: string,
     @Args('startedAt') startedAt: Date,
     @Args('endedAt') endedAt: Date,
   ) {
     return await this.activityService.create({
-      name,
+      text,
       startedAt,
       endedAt,
     });

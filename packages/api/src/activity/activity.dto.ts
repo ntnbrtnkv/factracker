@@ -1,5 +1,5 @@
 export interface ActivityDTO {
-  name: string;
+  text: string;
   startedAt: Date;
   endedAt: Date;
 }

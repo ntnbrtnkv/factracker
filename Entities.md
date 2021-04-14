@@ -6,18 +6,20 @@ entity Activity {
   string id
   User user
   Tag[] tags
-  varchar text
+  string text
   Date startedAt
   Date endedAt
 }
 
 entity User {
   string id
+  string username
+  string password
 }
 
 entity Tag {
   string id
-  varchar text
+  string text
 }
 
 User ||..o{ Activity
