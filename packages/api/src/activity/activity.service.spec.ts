@@ -28,7 +28,7 @@ describe('ActivityService', () => {
   it('should get all', () => {
     const activities: ActivityDTO[] = [
       {
-        name: '123',
+        text: '123',
         endedAt: new Date(),
         startedAt: new Date(),
       },

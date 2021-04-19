@@ -1,6 +1,6 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { Exclude } from 'class-transformer';
 import bcrypt from 'bcrypt';
+import { Exclude } from 'class-transformer';
 import {
   BeforeInsert,
   Column,
@@ -8,6 +8,7 @@ import {
   Index,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+
 import { DB } from '../config';
 
 @ObjectType()
