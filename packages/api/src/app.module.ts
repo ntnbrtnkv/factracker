@@ -5,8 +5,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import ORMConfig from '../ormconfig';
 import { ActivityModule } from './activity/activity.module';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { commonConfig } from './config';
 import { APIConfigService } from './config/api-config.service';
@@ -36,7 +34,7 @@ import { UserModule } from './user/user.module';
     AuthModule,
     UserModule,
   ],
-  controllers: [AppController],
-  providers: [AppService, APIConfigService],
+  controllers: [],
+  providers: [APIConfigService],
 })
 export class AppModule {}
