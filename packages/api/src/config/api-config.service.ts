@@ -10,6 +10,10 @@ export class APIConfigService {
     private readonly commonConf: ConfigType<typeof commonConfig>,
   ) {}
 
+  get(key: keyof ConfigType<typeof commonConfig>) {
+    return this.commonConf[key];
+  }
+
   isProduction() {
     return this.commonConf.node_env === 'production';
   }
