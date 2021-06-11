@@ -77,9 +77,6 @@
       "json",
       "ts"
     ],
-    "setupFiles": [
-      "./config/env.ts"
-    ],
     "coveragePathIgnorePatterns": [
       "/config/",
       ".*\\.d\\.ts$"
